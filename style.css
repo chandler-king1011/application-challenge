@@ -1,0 +1,22 @@
+.users {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.users > .user {
+    width: 100px;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    border: 1px solid gray;
+}
+
+.users > .hover {
+    border: 2px solid black;
+}
+
+

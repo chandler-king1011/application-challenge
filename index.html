@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<link rel="stylesheet" href="style.css">
+<title></title>
+</head>
+<body>
+    <div class="main">
+        <ul class="users"></ul>
+    </div>
+  
+</body>
+<script>
+    const data = [{'name': 'user1','group': 1},{'name': 'user2','group': 1},{'name': 'user3','group': 2}];
+    const fillUserList = (data) => {
+        const usersList = document.querySelector(".users");
+        usersList.innerHTML = data.map((user) => {
+         return `<li id=${user.group} class="user">${user.name}</li>`
+    }).join(" ");
+}
+
+    window.onload = fillUserList(data);
+    const users = document.querySelectorAll(".user");
+    const toggleHover = (event) => {
+        event.target.classList.toggle("hover");
+    }
+    const alertGroup = (event) => {
+        alert(event.target.id);
+    }
+
+    users.forEach((user) => {
+        user.addEventListener("mouseover", toggleHover);
+        user.addEventListener("mouseleave", toggleHover);
+        user.addEventListener("click", alertGroup);
+    })
+
+
+
+</script>
+</html>
